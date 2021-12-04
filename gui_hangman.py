@@ -53,7 +53,7 @@ def hangman():
     elif h == "  _____ \n |        |\n  O       | \n  /|       | \n  / \      | \n __________":
         hanger.configure(text = "  _____ \n |        |\n  O       | \n  /|\      | \n  / \      | \n __________")
         prompt.configure(text = "Game over! The word was: " + str(word) + ". Exiting...")
-        window.after(2000, window.destroy)
+        #window.after(2000, window.destroy)
 
 
 def clicked(letter, word):
