@@ -6,7 +6,7 @@ import random
 def check_dash():
     if '_' not in dashes:
         prompt.configure(text = "You win! Exiting...")
-        window.after(2000, window.destroy)
+        window.after(5000, window.destroy)
 
 def check_let(letter, word):
     if letter in let_guess_list:
@@ -53,14 +53,13 @@ def hangman():
     elif h == "  _____ \n |        |\n  O       | \n  /|       | \n  / \      | \n __________":
         hanger.configure(text = "  _____ \n |        |\n  O       | \n  /|\      | \n  / \      | \n __________")
         prompt.configure(text = "Game over! The word was: " + str(word) + ". Exiting...")
-        #window.after(2000, window.destroy)
+        window.after(5000, window.destroy)
 
 
 def clicked(letter, word):
     check_let(letter, word)
     check_dash()
 
-# -----------word = joker---------------------------
 FILE = "words.txt"
 
 f = open("words.txt")
@@ -69,7 +68,7 @@ for line in f:
     word_lst.append(line.strip())
 
 word = random.choice(word_lst)
-#print("The word is:", word)
+print("The word is:", word)
 
 dashes = []
 for i in word:
